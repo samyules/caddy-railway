@@ -8,6 +8,6 @@
 #root /www
 #file_server
 
-:8080 {
-    reverse_proxy pds-server:3000
-}
+:8080
+
+reverse_proxy pds-server.railway.internal:3000
