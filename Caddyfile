@@ -3,7 +3,11 @@
 # Edit this file according to your needs.
 
 # Remember, Railway terminates TLS before it gets to Caddy.
-:8080
+#:8080
+#
+#root /www
+#file_server
 
-root /www
-file_server
+:8080 {
+    reverse_proxy pds-server:3000
+}
