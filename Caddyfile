@@ -12,10 +12,12 @@
     auto_https off
 }
 
-pds.thewestwoods.us:8080 {
-    reverse_proxy http://pds-server.railway.internal:3000
-}
+:8080 {
+    handle pds.thewestwoods.us {
+        reverse_proxy http://pds-server.railway.internal:3000
+    }
 
-samwestwood.me:8080 {
-    respond /.well-known/atproto-did "did:plc:ijumpgpxyi6z5f53dz7panhh" 200
+    handle samwestwood.me {
+        respond /.well-known/atproto-did "did:plc:ijumpgpxyi6z5f53dz7panhh" 200
+    }
 }
